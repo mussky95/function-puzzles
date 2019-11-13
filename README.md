@@ -1,1 +1,1 @@
-# JS Functional Puzzles
+# JS Functional Puzzles [![Build Status](https://travis-ci.com/mussky95/function-puzzles.svg?branch=master)](https://travis-ci.com/mussky95/function-puzzles) [![Maintainability](https://api.codeclimate.com/v1/badges/491e23b987b7ba523b4c/maintainability)](https://codeclimate.com/github/mussky95/function-puzzles/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/491e23b987b7ba523b4c/test_coverage)](https://codeclimate.com/github/mussky95/function-puzzles/test_coverage)
