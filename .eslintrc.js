@@ -8,6 +8,10 @@ module.exports = {
         "jest": true,
     },
     "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+    },
     "extends": [
         "airbnb-base",
         "plugin:jest/recommended",
