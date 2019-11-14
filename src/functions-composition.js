@@ -1,3 +1,5 @@
-const compose = (...fns) => (x) => fns.reduce((acc, fn) => fn(acc), x);
+const compose = (...fns) => (x) => fns.reduceRight((y, f) => f(y), x);
 
-export default compose;
+const pipe = (...fns) => (x) => fns.reduce((y, f) => f(y), x);
+
+export { compose, pipe };
