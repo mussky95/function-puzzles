@@ -1,22 +1,16 @@
-import { reduce, filter } from './array-functions';
-import { compose, pipe } from './functions-composition';
-
-/*const add = (a, b) => a + b;
-
-const sum = (array) => reduce(array, add, 0);
+import { reduce, filter as filterBase } from './array-functions';
+import { pipe } from './functions-composition';
 
 const isEven = (n) => n % 2 === 0;
 
-const getEvenNums = (array) => filter(array, isEven);*/
+const filter = (fn) => (array) => filterBase(array, fn);
 
-//const getEvenNumsAverage = compose(sum, getEvenNums);
-//const getEvenNumsAverage = pipe(getEvenNums, sum);
+const add = (acc, item) => ({ sum: acc.sum + item, count: acc.count + 1 });
 
-const getEvenNumsAverage = (array) => {
-  const items = filter(array, (n) => n % 2 === 0);
-  const sum = reduce(items, (a, b) => a + b, 0);
+const aggregate = (fn, acc) => (array) => reduce(array, fn, acc);
 
-  return sum / items.length;
-};
+const average = ({ sum: test, count }) => test / count;
+
+const getEvenNumsAverage = pipe(filter(isEven), aggregate(add, { sum: 0, count: 0 }), average);
 
 export default getEvenNumsAverage;
